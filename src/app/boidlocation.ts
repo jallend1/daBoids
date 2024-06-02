@@ -1,10 +1,10 @@
 export interface BoidLocation {
-    id: number;
-    name: string;
-    city: string;
-    state: string;
-    photo: string;
-    availableUnits: number;
-    wifi: boolean;
-    laundry: boolean;
+  id: number;
+  name: string;
+  city: string;
+  state: string;
+  photo: string;
+  sightings: number;
+  atBirdFeeder: boolean;
+  personalPhoto: boolean;
 }
