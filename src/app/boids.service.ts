@@ -15,8 +15,8 @@ export class BoidsService {
       state: 'WA',
       photo: `assets/boidImages/american-robin.jpg`,
       sightings: 1,
-      atBirdFeeder: true,
-      personalPhoto: true,
+      atBirdFeeder: false,
+      personalPhoto: false,
     },
     {
       id: 1,

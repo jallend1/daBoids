@@ -15,8 +15,10 @@
     <h2 class="section-heading">About this boid location</h2>
     <ul>
       <li>Number of sightings: {{ boidLocation?.sightings }}</li>
-      <li>Seen at bird feeder: {{ boidLocation?.atBirdFeeder }}</li>
-      <li>Personal photo: {{ boidLocation?.personalPhoto }}</li>
+      <li>
+        Seen at bird feeder: {{ boidLocation?.atBirdFeeder ? "Yes" : "No" }}
+      </li>
+      <li>Personal photo: {{ boidLocation?.personalPhoto ? "Yes" : "No" }}</li>
     </ul>
   </section>
   <section class="listing-apply">
