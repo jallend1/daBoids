@@ -13,8 +13,20 @@ import { BoidsService } from '../boids.service';
 })
 export class HomeComponent {
   boidLocationList: BoidLocation[] = [];
+  filteredBoidList: BoidLocation[] = [];
 
   constructor(private boidsService: BoidsService) {
     this.boidLocationList = this.boidsService.getAllBoidLocations();
+    this.filteredBoidList = this.boidLocationList;
+  }
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredBoidList = this.boidLocationList;
+    }
+
+    this.filteredBoidList = this.boidLocationList.filter((boidLocation) =>
+      boidLocation?.name?.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }

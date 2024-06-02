@@ -1,12 +1,14 @@
 <section>
   <form>
-    <input type="text" placeholder="Filter by bird" />
-    <button class="primary" type="button">Search</button>
+    <input type="text" placeholder="Filter by bird" #filter />
+    <button class="primary" type="button" (click)="filterResults(filter.value)">
+      Search
+    </button>
   </form>
 </section>
 <section class="results">
   <app-boid-location
-    *ngFor="let boidLocation of boidLocationList"
+    *ngFor="let boidLocation of filteredBoidList"
     [boidLocation]="boidLocation"
   >
   </app-boid-location>
