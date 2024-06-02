@@ -4,7 +4,7 @@ import { DetailsComponent } from './details/details.component';
 
 const routeConfig: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
-  { path: 'details', component: DetailsComponent, title: 'Boid Details' },
+  { path: 'details/:id', component: DetailsComponent, title: 'Boid Details' },
 ];
 
 export default routeConfig;

@@ -1,12 +1,14 @@
-<section class="listing">
-  <img
-    class="listing-photo"
-    [src]="boidLocation.photo"
-    alt="Photo of {{ boidLocation.name }}"
-    crossorigin
-  />
-  <h2 class="listing-heading">{{ boidLocation.name }}</h2>
-  <p class="listing-location">
-    {{ boidLocation.city }}, {{ boidLocation.state }}
-  </p>
-</section>
+<a [routerLink]="['/details', boidLocation.id]">
+  <section class="listing">
+    <img
+      class="listing-photo"
+      [src]="boidLocation.photo"
+      alt="Photo of {{ boidLocation.name }}"
+      crossorigin
+    />
+    <h2 class="listing-heading">{{ boidLocation.name }}</h2>
+    <p class="listing-location">
+      {{ boidLocation.city }}, {{ boidLocation.state }}
+    </p>
+  </section>
+</a>
