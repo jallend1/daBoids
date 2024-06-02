@@ -8,10 +8,11 @@ import { BoidLocation } from '../boidlocation';
   standalone: true,
   imports: [CommonModule, BoidLocationComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
   readonly baseUrl = 'https://angular.dev/assets/tutorials/common';
+
   boidLocation: BoidLocation = {
     id: 9999,
     name: 'Test Boid',
