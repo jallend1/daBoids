@@ -6,7 +6,6 @@ import { BoidLocation } from './boidlocation';
 })
 export class BoidsService {
   constructor() {}
-  readonly baseUrl = 'https://angular.dev/assets/tutorials/common';
   boidLocationList: BoidLocation[] = [
     {
       id: 0,
