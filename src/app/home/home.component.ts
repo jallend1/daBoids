@@ -13,24 +13,13 @@ import { BoidLocation } from '../boidlocation';
 export class HomeComponent {
   readonly baseUrl = 'https://angular.dev/assets/tutorials/common';
 
-  // boidLocation: BoidLocation = {
-  //   id: 9999,
-  //   name: 'Test Boid',
-  //   city: 'Test boid location',
-  //   state: 'ST',
-  //   photo: `${this.baseUrl}/example-house.jpg`,
-  //   availableUnits: 99,
-  //   wifi: true,
-  //   laundry: false,
-  // };
-
   boidLocationList: BoidLocation[] = [
     {
       id: 0,
       name: 'American Robin',
       city: 'Duvall',
       state: 'WA',
-      photo: `${this.baseUrl}/american-robin.jpg`,
+      photo: `assets/boidImages/american-robin.jpg`,
       availableUnits: 1,
       wifi: true,
       laundry: true,
