@@ -5,5 +5,9 @@
   </form>
 </section>
 <section class="results">
-    <app-boid-location></app-boid-location>
-  </section>
+  <app-boid-location
+    *ngFor="let boidLocation of boidLocationList"
+    [boidLocation]="boidLocation"
+  >
+  </app-boid-location>
+</section>
