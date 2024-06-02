@@ -19,4 +19,14 @@
       <li>Does this location have laundry: {{ boidLocation?.laundry }}</li>
     </ul>
   </section>
+  <section class="listing-apply">
+    <h2 class="section-heading">Report a new sighting</h2>
+    <form [formGroup]="applyForm" (submit)="submitSighting()">
+      <label for="city-name">City Name</label>
+      <input id="city-name" type="text" formControlName="cityName" />
+      <label for="state-name">State Name</label>
+      <input id="state-name" type="text" formControlName="stateName" />
+      <button type="submit" class="primary">Apply now</button>
+    </form>
+  </section>
 </article>

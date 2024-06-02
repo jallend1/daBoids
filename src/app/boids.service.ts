@@ -107,4 +107,10 @@ export class BoidsService {
   getBoidLocationById(id: number): BoidLocation | undefined {
     return this.boidLocationList.find((boidLocation) => boidLocation.id === id);
   }
+
+  submitSighting(cityName: string, stateName: string) {
+    console.log(
+      `Bird sighting declared: cityName: ${cityName}, stateName: ${stateName}.`
+    );
+  }
 }

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BoidsService } from '../boids.service';
 import { BoidLocation } from '../boidlocation';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
@@ -15,6 +16,11 @@ export class DetailsComponent {
   boidLocation: BoidLocation | undefined;
   boidService = new BoidsService();
 
+  applyForm = new FormGroup({
+    cityName: new FormControl(''),
+    stateName: new FormControl(''),
+  });
+
   constructor(
     private route: ActivatedRoute,
     private boidsService: BoidsService
@@ -22,6 +28,13 @@ export class DetailsComponent {
     this.boidLocationId = Number(this.route.snapshot.paramMap.get('id'));
     this.boidLocation = this.boidsService.boidLocationList.find(
       (boidLocation) => boidLocation.id === this.boidLocationId
+    );
+  }
+
+  submitSighting() {
+    this.boidsService.submitSighting(
+      this.applyForm.value.cityName ?? '',
+      this.applyForm.value.stateName ?? ''
     );
   }
 }
