@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EbirdService {
   constructor() {}
-  url =
-    'https://api.ebird.org/v2/ref/taxonomy/ebird?species=hottea1&key=${process.env.EBIRD_API_KEY}';
+
+  getEbirdData(species: string) {
+    const url = `https://api.ebird.org/v2/ref/taxonomy/ebird?species=${species}&key=${environment.ebirdApiKey}`;
+    return fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
+  }
 }

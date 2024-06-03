@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BoidsService } from '../boids.service';
 import { BoidLocation } from '../boidlocation';
+import { EbirdService } from '../ebird.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +16,7 @@ export class DetailsComponent {
   boidLocationId: number;
   boidLocation: BoidLocation | undefined;
   boidService = new BoidsService();
+  ebirdService = new EbirdService();
 
   applyForm = new FormGroup({
     cityName: new FormControl(''),
