@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BoidsService } from '../boids.service';
 import { BoidLocation } from '../boidlocation';
 import { EbirdService } from '../ebird.service';

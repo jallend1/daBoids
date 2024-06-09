@@ -1,53 +1,58 @@
-<article>
-  <img
-    class="listing-photo"
-    [src]="boidLocation?.photo"
-    alt="Photo of {{ boidLocation?.name }}"
-    crossorigin
-  />
-  <section class="listing-description">
+<article class="listing">
+  <header class="listing-header">
     <h2 class="listing-heading">{{ boidLocation?.name }}</h2>
-    <p class="listing-location">
-      {{ boidLocation?.city }}, {{ boidLocation?.state }}
-    </p>
-  </section>
-  <section class="listing-features">
-    <h2 class="section-heading">About this boid</h2>
-    <button (click)="checkEbirdService(boidLocation?.speciesCode ?? '')">
-      Check ebird
-    </button>
-    <table *ngIf="ebirdData.length && ebirdData[0].sciName">
-      <thead>
-        <tr>
-          <th>Family</th>
-          <th>Scientific Name</th>
-          <th>Family Scientific Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ ebirdData[0].sciName }}</td>
-          <td>{{ ebirdData[0].familyComName }}</td>
-          <td>{{ ebirdData[0].familySciName }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <ul>
-      <li>Number of sightings: {{ boidLocation?.sightings }}</li>
-      <li>
-        Seen at bird feeder: {{ boidLocation?.atBirdFeeder ? "Yes" : "No" }}
-      </li>
-      <li>Personal photo: {{ boidLocation?.personalPhoto ? "Yes" : "No" }}</li>
-    </ul>
-  </section>
-  <section class="listing-apply">
-    <h2 class="section-heading">Report a new sighting</h2>
-    <form [formGroup]="applyForm" (submit)="submitSighting()">
-      <label for="city-name">City Name</label>
-      <input id="city-name" type="text" formControlName="cityName" />
-      <label for="state-name">State Name</label>
-      <input id="state-name" type="text" formControlName="stateName" />
-      <button type="submit" class="primary">Submit now</button>
-    </form>
-  </section>
+    <a routerLink="/list" class="back-link">Back to list</a>
+    <img
+      class="listing-photo"
+      [src]="boidLocation?.photo"
+      alt="Photo of {{ boidLocation?.name }}"
+      crossorigin
+    />
+  </header>
+  <main class="listing-main">
+    <section class="listing-features">
+      <h2 class="section-heading">About this boid</h2>
+      <p class="listing-location">
+        {{ boidLocation?.city }}, {{ boidLocation?.state }}
+      </p>
+      <table
+        class="ebird-details"
+        *ngIf="ebirdData.length && ebirdData[0].sciName"
+      >
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th>Scientific Name</th>
+            <th>Family Scientific Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ ebirdData[0].sciName }}</td>
+            <td>{{ ebirdData[0].familyComName }}</td>
+            <td>{{ ebirdData[0].familySciName }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>Number of sightings: {{ boidLocation?.sightings }}</li>
+        <li>
+          Seen at bird feeder: {{ boidLocation?.atBirdFeeder ? "Yes" : "No" }}
+        </li>
+        <li>
+          Personal photo: {{ boidLocation?.personalPhoto ? "Yes" : "No" }}
+        </li>
+      </ul>
+    </section>
+    <section class="listing-sighting">
+      <h2 class="section-heading">Report a new sighting</h2>
+      <form [formGroup]="applyForm" (submit)="submitSighting()">
+        <label for="city-name">City Name</label>
+        <input id="city-name" type="text" formControlName="cityName" />
+        <label for="state-name">State Name</label>
+        <input id="state-name" type="text" formControlName="stateName" />
+        <button type="submit" class="primary">Submit now</button>
+      </form>
+    </section>
+  </main>
 </article>
