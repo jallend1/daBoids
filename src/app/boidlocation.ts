@@ -4,6 +4,7 @@ export interface BoidLocation {
   city: string;
   state: string;
   photo: string;
+  speciesCode: string;
   sightings: number;
   atBirdFeeder: boolean;
   personalPhoto: boolean;

@@ -34,8 +34,8 @@ export class DetailsComponent {
     );
   }
 
-  async checkEbirdService() {
-    const data = await this.ebirdsService.getEbirdData('amerob');
+  async checkEbirdService(speciesCode: string) {
+    const data = await this.ebirdsService.getEbirdData(speciesCode);
     console.log(data);
   }
 
