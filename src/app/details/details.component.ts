@@ -16,7 +16,7 @@ export class DetailsComponent {
   boidLocationId: number;
   boidLocation: BoidLocation | undefined;
   boidService = new BoidsService();
-  ebirdService = new EbirdService();
+  // ebirdService = new EbirdService();
 
   applyForm = new FormGroup({
     cityName: new FormControl(''),
@@ -25,12 +25,18 @@ export class DetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private boidsService: BoidsService
+    private boidsService: BoidsService,
+    private ebirdsService: EbirdService
   ) {
     this.boidLocationId = Number(this.route.snapshot.paramMap.get('id'));
     this.boidLocation = this.boidsService.boidLocationList.find(
       (boidLocation) => boidLocation.id === this.boidLocationId
     );
+  }
+
+  async checkEbirdService() {
+    const data = await this.ebirdsService.getEbirdData('amerob');
+    console.log(data);
   }
 
   submitSighting() {

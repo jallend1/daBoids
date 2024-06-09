@@ -14,8 +14,11 @@ import { BoidsService } from '../boids.service';
 export class HomeComponent {
   boidLocationList: BoidLocation[] = [];
   filteredBoidList: BoidLocation[] = [];
+  ebirdData: any;
 
-  constructor(private boidsService: BoidsService) {
+  constructor(
+    private boidsService: BoidsService // private ebirdService: EbirdService
+  ) {
     this.boidLocationList = this.boidsService.getAllBoidLocations();
     this.filteredBoidList = this.boidLocationList;
   }
