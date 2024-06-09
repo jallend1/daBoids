@@ -17,12 +17,7 @@ export class DetailsComponent implements OnInit {
   boidLocationId: number;
   boidLocation: BoidLocation | undefined;
   boidService = new BoidsService();
-
-  // Fetches ebird data using the species code of the boidLocation object
   ebirdData: any;
-  ebirdService = new EbirdService();
-
-  // ebirdService = new EbirdService();
 
   applyForm = new FormGroup({
     cityName: new FormControl(''),
@@ -51,9 +46,6 @@ export class DetailsComponent implements OnInit {
 
   async checkEbirdService(speciesCode: string) {
     this.ebirdData = await this.ebirdsService.getEbirdData(speciesCode);
-    console.log(this.ebirdData);
-    console.log(typeof this.ebirdData);
-    console.log(this.ebirdData[0].sciName);
   }
 
   submitSighting() {
