@@ -16,6 +16,22 @@
     <button (click)="checkEbirdService(boidLocation?.speciesCode ?? '')">
       Check ebird
     </button>
+    <table *ngIf="ebirdData.length && ebirdData[0].sciName">
+      <thead>
+        <tr>
+          <th>Family</th>
+          <th>Scientific Name</th>
+          <th>Family Scientific Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ ebirdData[0].sciName }}</td>
+          <td>{{ ebirdData[0].familyComName }}</td>
+          <td>{{ ebirdData[0].familySciName }}</td>
+        </tr>
+      </tbody>
+    </table>
     <ul>
       <li>Number of sightings: {{ boidLocation?.sightings }}</li>
       <li>

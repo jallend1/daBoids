@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { BoidsService } from '../boids.service';
 import { BoidLocation } from '../boidlocation';
@@ -8,14 +9,19 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit {
   boidLocationId: number;
   boidLocation: BoidLocation | undefined;
   boidService = new BoidsService();
+
+  // Fetches ebird data using the species code of the boidLocation object
+  ebirdData: any;
+  ebirdService = new EbirdService();
+
   // ebirdService = new EbirdService();
 
   applyForm = new FormGroup({
@@ -32,11 +38,22 @@ export class DetailsComponent {
     this.boidLocation = this.boidsService.boidLocationList.find(
       (boidLocation) => boidLocation.id === this.boidLocationId
     );
+    this.ebirdData = this.boidLocation
+      ? this.checkEbirdService(this.boidLocation.speciesCode)
+      : null;
+  }
+
+  ngOnInit() {
+    if (this.boidLocation) {
+      this.checkEbirdService(this.boidLocation.speciesCode);
+    }
   }
 
   async checkEbirdService(speciesCode: string) {
-    const data = await this.ebirdsService.getEbirdData(speciesCode);
-    console.log(data);
+    this.ebirdData = await this.ebirdsService.getEbirdData(speciesCode);
+    console.log(this.ebirdData);
+    console.log(typeof this.ebirdData);
+    console.log(this.ebirdData[0].sciName);
   }
 
   submitSighting() {
