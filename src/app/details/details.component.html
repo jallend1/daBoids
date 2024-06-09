@@ -1,20 +1,17 @@
 <article class="listing">
   <header class="listing-header">
     <h2 class="listing-heading">{{ boidLocation?.name }}</h2>
-    <a routerLink="/">Back Home</a>
     <img
       class="listing-photo"
       [src]="boidLocation?.photo"
       alt="Photo of {{ boidLocation?.name }}"
       crossorigin
     />
+    <a routerLink="/">Back Home</a>
   </header>
   <main class="listing-main">
     <section class="listing-features">
-      <h2 class="section-heading">About this boid</h2>
-      <p class="listing-location">
-        {{ boidLocation?.city }}, {{ boidLocation?.state }}
-      </p>
+      <!-- <h2 class="section-heading">About this boid</h2> -->
       <table
         class="ebird-details"
         *ngIf="ebirdData.length && ebirdData[0].sciName"
@@ -43,6 +40,9 @@
           Personal photo: {{ boidLocation?.personalPhoto ? "Yes" : "No" }}
         </li>
       </ul>
+      <p class="listing-location">
+        {{ boidLocation?.city }}, {{ boidLocation?.state }}
+      </p>
     </section>
     <section class="listing-sighting">
       <h2 class="section-heading">Report a new sighting</h2>
