@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Overpass";
+  src: url("assets/fonts/Overpass-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arimo";
+  src: url("assets/fonts/Arimo-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("assets/fonts/PTSansNarrow-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PT Sans Narrow Bold";
+  src: url("assets/fonts/PTSansNarrow-Bold.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,10 +34,14 @@
   --secondary-color: #302414;
   --accent-color: #7e4b0c;
   --shadow-color: #918672;
+
+  --title-font: "PT Sans Narrow Bold", sans-serif;
+  --heading-font: "Arimo", sans-serif;
+  --body-font: "Overpass", sans-serif;
 }
 
 body {
-  font-family: "Be Vietnam Pro", sans-serif;
+  font-family: "Overpass", sans-serif;
   background-color: var(--background-color);
 }
 
