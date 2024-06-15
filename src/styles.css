@@ -4,12 +4,16 @@
 }
 
 :root {
-  --primary-color: #051f0d;
-  --secondary-color: #eb7f73;
+  /* --primary-color: #051f0d;
+  --secondary-color: #eb7f73; */
   /* --accent-color: #f9faf2; */
-  --accent-color: #f6e9d6;
-  --shadow-color: #e8e8e8;
-  --background-color: #cfded7;
+  /* --accent-color: #f6e9d6; */
+
+  --background-color: #f6e9d6;
+  --primary-color: #fdfdfd;
+  --secondary-color: #302414;
+  --accent-color: #7e4b0c;
+  --shadow-color: #918672;
 }
 
 body {
@@ -20,7 +24,7 @@ body {
 button.primary {
   padding: 10px;
   border: solid 1px var(--primary-color);
-  background: var(--primary-color);
+  background: var(--accent-color);
   color: white;
   border-radius: 8px;
 }
@@ -30,9 +34,6 @@ a {
 }
 
 .brand-name {
-  background-color: var(--accent-color);
-}
-
-.content {
-  background-color: #cfded7;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
