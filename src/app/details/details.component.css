@@ -4,6 +4,7 @@
   grid-gap: 2rem;
   max-width: 80%;
   margin: 0 auto;
+  padding-top: 2rem;
 }
 
 .listing-header {
@@ -16,7 +17,8 @@
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: var(--heading-font);
 }
 
 .listing-photo {
