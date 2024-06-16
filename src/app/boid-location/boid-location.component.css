@@ -4,12 +4,19 @@
   box-shadow: -10px 20px 25px var(--shadow-color);
   height: 100%;
 }
+
+.listing:hover {
+  transition: transform 0.5s;
+  transform: scale(1.1);
+}
+
 .listing-heading {
   color: var(--secondary-color);
   font-family: var(--heading-font);
   padding: 1rem;
   text-align: center;
 }
+
 .listing-photo {
   height: 250px;
   width: 100%;
