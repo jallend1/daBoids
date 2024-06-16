@@ -12,8 +12,8 @@
   font-family: "PT Sans Narrow";
   src: url("assets/fonts/PTSansNarrow-Regular.ttf") format("truetype");
 }
-
-@font-face {
+"
+" @font-face {
   font-family: "PT Sans Narrow Bold";
   src: url("assets/fonts/PTSansNarrow-Bold.ttf") format("truetype");
 }
